@@ -1,0 +1,22 @@
+{
+  "app": {
+    "background": {
+      "scripts": ["main.js"]
+    }
+  },
+  "manifest_version": 2,
+  "name": "Central Tech Hub",
+  "version": "1.0",
+  "description": "A central tech hub for GSK employees",
+  "icons": {
+    "128": "img/icons/gsk.png"
+  }
+  // "externally_connectable": {
+    // "matches": ["*://*.example.com/*"]
+  // },
+  // "key": "publicKey",
+  // "oauth2": ..., // figure out authentication
+  // "offline_enabled": false
+  // "optional_permissions": ["tabs"],
+  // "permissions": ["tabs"],
+}
