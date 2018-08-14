@@ -1,0 +1,24 @@
+{
+  "background": {
+      "scripts": ["scripts/main.js"],
+      "persistent": false
+  },
+  "manifest_version": 2,
+  "name": "GSK Employee Notification Center",
+  "version": "1.0",
+  "description": "A quick notification center for GSK employees",
+  "browser_action": {
+      "default_icon": "img/icons/gsk-128.png",
+      "default_popup": "index.html"
+  },
+  "permissions": ["app.window", 
+    "identity", 
+    "https://outlook.live.com/", 
+    "https://www.skype.com/", 
+    "https://gsk-workplace.facebook.com/"]
+  // "externally_connectable": {
+    // "matches": ["*://*.example.com/*"]
+  // },
+  // "key": "publicKey",
+  // "oauth2": ..., // figure out authentication
+}

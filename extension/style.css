@@ -1,0 +1,78 @@
+:root {
+	--gskteal: #2A8698;
+	--gskorange: #E76B23;
+ 	--myfont: "Nanum Gothic", sans-serif;
+}
+
+@font-face {
+	font-family: "Nanum Gothic";
+ 	src:url("Nanum_Gothic/NanumGothic-Regular.ttf");
+}
+
+body {
+	font-family: var(--myfont);
+	margin: 0;
+	width: 400px;
+}
+
+header {
+	background-color: var(--gskteal);
+}
+
+header img {
+	width: 10%;
+	align: middle;
+}
+
+h1 {
+	font-size: 16pt;
+	color: #ffffff;
+	margin: 0;
+	padding: 5px;
+	display: inline-block;
+	font-weight: normal;
+}
+
+#links {
+	list-style: none;
+	padding-left: 0;
+	margin: 15px 0;
+}
+
+.link {
+	display: inline-block;
+	width: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+#home {
+	margin-left: 3%;
+}
+
+#workplace {
+	margin-right: 3%;
+}
+
+figure {
+	margin: 0;
+}
+
+.link img {
+	width: 100%;
+	margin: 0;
+}
+
+.link a {
+	font-size: 10pt;
+	text-decoration: none;
+	color: black;
+}
+
+.link a:hover {
+	color: gray;
+}
+
+figcaption {
+	text-align: center;
+}

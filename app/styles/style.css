@@ -1,0 +1,178 @@
+:root {
+	--gskteal: #2A8698;
+	--gskorange: #E76B23;
+	--gskgray: #ACAFAC;
+	--white: #FFFFFF;
+ 	--myfont: "Nanum Gothic", sans-serif;
+}
+
+@font-face {
+	font-family: "Nanum Gothic";
+ 	src:url("../Nanum_Gothic/NanumGothic-Regular.ttf");
+}
+
+html, body {
+    overflow-y: visible;
+    margin: 0;
+    font-family: var(--myfont) !important; 
+}
+
+header {
+	background-color: var(--gskteal);
+	height: 70px; /** TODO: edit height */
+}
+
+header img {
+	width: 5%;
+}
+
+header h1 {
+	font-size: 24pt;
+	color: var(--white);
+	margin: 0;
+	padding: 5px;
+	display: inline-block;
+	font-weight: normal;
+	text-align: center; /* not working */
+}
+
+button {
+	border: none;
+	background-color: inherit;
+}
+
+.container {
+	margin: 0 !important;
+	/** TODO: remove right margin */;
+	padding: 0 !important;
+}
+
+#calendar {
+	border-right: 1px solid black;
+}
+
+#calendar .container {
+	width: 90%;
+	margin: 0 5% !important;
+}
+
+#calendar img {
+	width: 100%;
+	padding-top: 20px;
+}
+
+#calendar button {
+	float: right;
+}
+
+#calendar h2 {
+	font-size: 20pt !important;
+	text-align: center;
+}
+
+#calendar h3 {
+	font-size: 18pt !important;
+}
+
+.event {
+	background-color: var(--gskteal);
+	border-radius: 2px;
+	margin-bottom: 10px;
+}
+
+.event p {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 16pt;
+	margin: 0 !important;
+}
+
+.event .time {
+	background-color: var(--white);
+	border-radius: 2px;
+	padding: 4px 5px; /* Things aint aligning */
+	margin-left: 2px;
+	display: inline-block;
+	width: 32%;
+	/* make the width all the same */
+	/* smaller font size */
+}
+
+.event .description {
+	padding-left: 5px;
+	padding-right: 5px;
+	color: white;
+	display: inline-block;
+	width: 68%-2px;
+	overflow-x: hidden; /* dis aint workin */
+}
+
+#all {
+	margin-top: 20px;
+}
+
+#settings {
+	width: 5%;
+	float: right;
+}
+
+#settings img {
+	width: 100%;
+}
+
+#settings-modal {
+	width: 15%;
+	position: absolute;
+	/* align w settings */
+}
+
+#settings-modal ul {
+	list-style: none;
+	padding: 5px;
+}
+
+#settings-modal li input {
+	position: relative !important;
+	margin-left: 0 !important;
+}
+
+#search {
+	display: block;
+	width: 80%;
+	margin: 0 10% 20px 10%;
+}
+
+#all .container {
+	border: 1px solid #979797;
+	margin-bottom: 20px !important;
+	margin-right: 15px !important;
+}
+
+.container-header {
+	background-color: var(--gskgray);
+	padding: 2px;
+}
+
+.container-header img {
+	width: 4%;
+	margin-right: 5px;
+}
+
+.container-header h2 {
+	display: inline-block;
+	color: var(--white);
+	font-size: 14pt;
+}
+
+.container-header button {
+	color: white;
+	float: right;
+}
+
+@media (min-width: 961px) {
+	.container {
+   		max-width: 1223px !important;
+   	}
+}
+
+
