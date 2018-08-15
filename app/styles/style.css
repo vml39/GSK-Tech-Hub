@@ -1,3 +1,7 @@
+/*---------------------
+--------DOCUMENT-------
+----------------------*/
+
 :root {
 	--gskteal: #2A8698;
 	--gskorange: #E76B23;
@@ -17,35 +21,49 @@ html, body {
     font-family: var(--myfont) !important; 
 }
 
-header {
-	background-color: var(--gskteal);
-	height: 70px; /** TODO: edit height */
-}
-
-header img {
-	width: 5%;
-}
-
-header h1 {
-	font-size: 24pt;
-	color: var(--white);
-	margin: 0;
-	padding: 5px;
-	display: inline-block;
-	font-weight: normal;
-	text-align: center; /* not working */
-}
-
 button {
 	border: none;
 	background-color: inherit;
 }
 
+button:hover {
+	color: var(--gskgray);
+}
+
 .container {
 	margin: 0 !important;
-	/** TODO: remove right margin */;
 	padding: 0 !important;
 }
+
+.centered {
+	text-align: center;
+}
+
+/*---------------------
+--------HEADER---------
+----------------------*/
+
+header {
+	background-color: var(--gskteal);
+	padding: 20px 5px;
+}
+
+header img {
+	width: 5%;
+	float: left;
+}
+
+header h1 {
+	font-size: 28pt;
+	color: var(--white);
+	margin: 0;
+	padding: 5px;
+	font-weight: normal;
+}
+
+/*---------------------
+-------CALENDAR--------
+----------------------*/
 
 #calendar {
 	border-right: 1px solid black;
@@ -53,7 +71,7 @@ button {
 
 #calendar .container {
 	width: 90%;
-	margin: 0 5% !important;
+	margin: 0 4% !important;
 }
 
 #calendar img {
@@ -61,17 +79,59 @@ button {
 	padding-top: 20px;
 }
 
-#calendar button {
+#addEvent, .close {
 	float: right;
+	font-size: 12pt !important;
+	padding: 0;
+}
+
+.close {
+	width: 20px;
+	display: inline-block;
+}
+
+#calendar-modal {
+	width: 300px;
+	top: auto;
+	bottom: auto;
+	left: 20%;
+}
+
+#calendar-modal .modal-dialog {
+	margin-top: 15px;
+}
+
+#calendar-modal .modal-content {
+	padding: 15px 10px;
+}
+
+#calendar-modal .modal-content h3 {
+	padding-bottom: 10px;
+	padding-right: 10px;
+}
+
+.flex-container {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+#calendar-modal input {
+	flex: 2;
+	margin-left: 10px;
 }
 
 #calendar h2 {
-	font-size: 20pt !important;
-	text-align: center;
+	font-size: 18pt !important;
+	padding-bottom: 10px;
 }
 
 #calendar h3 {
-	font-size: 18pt !important;
+	font-size: 14pt !important;
+	padding-bottom: 5px;
+}
+
+.day {
+	margin-bottom: 25px;
 }
 
 .event {
@@ -81,80 +141,109 @@ button {
 }
 
 .event p {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	font-size: 16pt;
+	padding-top: 2px;
+	padding-bottom: 2px;
 	margin: 0 !important;
+	font-size: 10.5pt !important;
 }
 
 .event .time {
 	background-color: var(--white);
 	border-radius: 2px;
-	padding: 4px 5px; /* Things aint aligning */
-	margin-left: 2px;
+	padding: 4px 5px; 
+	margin-left: 3px;
+	text-align: right;
 	display: inline-block;
-	width: 32%;
-	/* make the width all the same */
-	/* smaller font size */
+	width: 33%;
 }
 
 .event .description {
-	padding-left: 5px;
+	padding-left: 7px;
 	padding-right: 5px;
 	color: white;
-	display: inline-block;
-	width: 68%-2px;
-	overflow-x: hidden; /* dis aint workin */
+	width: 66% - 2px;
 }
 
+/*---------------------
+----------ALL----------
+----------------------*/
+
 #all {
-	margin-top: 20px;
+	padding: 20px 6%;
 }
 
 #settings {
 	width: 5%;
 	float: right;
+	padding-top: 5px;
 }
 
 #settings img {
-	width: 100%;
+	width: 25px;
 }
 
 #settings-modal {
-	width: 15%;
+	width: 200px;
 	position: absolute;
-	/* align w settings */
+	left: auto;
+	right: 30px;
+}
+
+#settings-modal .modal-dialog {
+	margin-top: 30px;
+}
+
+#settings-modal .modal-content h3 {
+	padding: 10px 0;
+	font-size: 14pt !important;
 }
 
 #settings-modal ul {
 	list-style: none;
-	padding: 5px;
+	padding: 0 5px;
 }
 
-#settings-modal li input {
+#settings-modal li {
+	padding-bottom: 7px;
+}
+
+#settings-modal img {
+	width: 25px;
+	padding-right: 5px;
+}
+
+#settings-modal input {
 	position: relative !important;
-	margin-left: 0 !important;
+	float: right;
+}
+
+#doneButton {
+	font-size: 12pt;
+	width: 40%;
+	padding-bottom: 5px;
+	margin: 0 30% 10px 30%;
+	/*border: 1px solid var(--gskgray);*/
 }
 
 #search {
 	display: block;
 	width: 80%;
-	margin: 0 10% 20px 10%;
+	margin: 0 10% 30px 10%;
 }
 
 #all .container {
 	border: 1px solid #979797;
-	margin-bottom: 20px !important;
+	margin-bottom: 25px !important;
 	margin-right: 15px !important;
 }
 
 .container-header {
 	background-color: var(--gskgray);
-	padding: 2px;
+	padding: 2px 2px 0 2px;
 }
 
 .container-header img {
-	width: 4%;
+	width: 3%;
 	margin-right: 5px;
 }
 
@@ -162,16 +251,69 @@ button {
 	display: inline-block;
 	color: var(--white);
 	font-size: 14pt;
+	margin-bottom: 0.35rem;
 }
 
 .container-header button {
 	color: white;
 	float: right;
+	width: 25px;
+}
+
+.show {
+	display: inline-block;
+}
+
+.hide {
+	display: none;
+}
+
+.container-content img {
+	width: 100%;
+}
+
+#bookmarks {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#bookmarks h4 {
+	font-size: 16pt !important;
+}
+
+.bookmark-links {
+	width: 30%;
+	margin-left: 2%;
+	margin-right: 2%;
+	display: inline-block;
+}
+
+.bookmark-links ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.left {
+	margin-left: 0;
+}
+
+.right {
+	margin-right: 0;
+}
+
+#bookmarks li a {
+
 }
 
 @media (min-width: 961px) {
 	.container {
    		max-width: 1223px !important;
+   	}
+}
+
+@media (min-width: 1224px) {
+	.container {
+   		max-width: 1823px !important;
    	}
 }
 

@@ -9,18 +9,46 @@
 <body>
 	<header>
 		<img alt="gsk logo" src="img/icons/gsklogo-gray.png">
-		<h1>GSK Tech Hub</h1>
+		<h1 class="centered">GSK Tech Hub</h1>
 	</header>
 
 	<div id="body-content" class="container">
 		<div class="row">
-			<div class="col-4" id="calendar">
+			<div class="col-3" id="calendar">
 				<div class="container">
-				<!-- embed the outlook calendar -->
-				<img alt="outlook calendar" src="img/outlook-calendar.png">
-					<h2>Upcoming Events</h2>
-					<button>edit</button>
-					<div class="day">
+					<!-- embed the outlook calendar -->
+					<img alt="outlook calendar" src="img/outlook-calendar.png">
+					<h2 class="centered">Upcoming Events</h2>
+
+					<button id="addEvent" data-toggle="modal" data-target="#calendar-modal">+</button>
+					<div id="calendar-modal" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h3 class="centered">Add an event</h3> <!-- send data to outlook -->
+								<form id="addEventForm">
+									<div class="flex-container">
+										<label for="calendar_date">Date: </label>
+										<input id="eventDate" type="date">
+									</div>
+									<div class="flex-container">
+										<label for="calendar_date">Time: </label>
+										<input id="eventTime" type="time">
+									</div>
+									<div class="flex-container">
+										<label for="calendar_description">Description: </label>
+										<input id="eventDescription" type="text">
+									</div>
+									<div class="centered">
+										<button id="submitEvent" data-dismiss="modal">Add</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>	
+
+					<div class="clear_float"></div>
+					<div id="today" class="day">
 						<h3>Today</h3> 
 						<div class="event">
 							<p><div class="time">8:45 am</div><span class="description">DevOps Daily Scrum</span></p>
@@ -29,7 +57,9 @@
 							<p><div class="time">10:00 am</div><span class="description">CI-CD Meeting</span></p>
 						</div>
 						<div class="event">
-							<p><div class="time">2:00 pm</div><span class="description">Brainstorm Meeting with Sesh</span></p>
+							<p><div class="time">2:00 pm</div><span class="description">Brainstorm Meeting</span></p>
+						</div>
+						<div id="newEvent" class="event">
 						</div>
 
 						<!-- date should udpate -->
@@ -56,92 +86,119 @@
 				</div>
 			</div>
 
-			<div class="col-8" id="all">
+			<div class="col-9">
 				<button id="settings" data-toggle="modal" data-target="#settings-modal"><img alt="settings" src="img/icons/settings.png"></button>
-				<!-- settings widget -->
-				<div id="settings-modal" class="modal">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<div class="modal-content">
-						<ul class="options">
-							<li>
-								<label class="form-check-label" for="outlook-show">Outlook</label>
-								<input type="checkbox" class="form-check-input" id="outlook-show">
-							</li>
-							<li>
-								<label class="form-check-label" for="skype-show">Skype</label>
-								<input type="checkbox" class="form-check-input" id="skype-show">
-							</li>
-							<li>
-								<label class="form-check-label" for="workplace-show">Workplace</label>
-								<input type="checkbox" class="form-check-input" id="workplace-show">
-							</li>
-							<li>
-								<label class="form-check-label" for="bookmarks-show">Bookmarks</label>
-								<input type="checkbox" class="form-check-input" id="bookmarks-show">
-							</li>
-							<li>
-								<label class="form-check-label" for="news-show">News</label>
-								<input type="checkbox" class="form-check-input" id="news-show">
-							</li>
-						</ul>
+				<div id="settings-modal" class="modal fade">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<h3 class="centered">Apps</h3>
+							<ul class="options">
+								<li>
+									<label class="form-check-label" for="outlook-show"><img alt="logo" src="img/icons/outlook.png">Outlook</label>
+									<input type="checkbox" class="form-check-input" id="outlook-show" checked>
+								</li>
+								<li>
+									<label class="form-check-label" for="skype-show"><img alt="logo" src="img/icons/skype.png">Skype</label>
+									<input type="checkbox" class="form-check-input" id="skype-show" checked>
+								</li>
+								<li>
+									<label class="form-check-label" for="workplace-show"><img alt="logo" src="img/icons/workplace.png">Workplace</label>
+									<input type="checkbox" class="form-check-input" id="workplace-show" checked>
+								</li>
+								<li>
+									<label class="form-check-label" for="bookmarks-show"><img alt="logo" src="img/icons/bookmark.png">Bookmarks</label>
+									<input type="checkbox" class="form-check-input" id="bookmarks-show" checked>
+								</li>
+								<li>
+									<label class="form-check-label" for="news-show"><img alt="logo" src="img/icons/news.png">News</label>
+									<input type="checkbox" class="form-check-input" id="news-show" checked>
+								</li>
+							</ul>
+							<button id="doneButton" class="close" type="button" data-dismiss="modal">Done</button>
+						</div>
 					</div>
 				</div>
-				<input id="search" type="text" placeholder="Search...">
+				<div id="all">
+					<input id="search" type="text" placeholder="Search GSK...">
 
-				<!-- make containers based on the data we pull in - need a backend -->
-				<div class="container">
-					<div class="container-header">
-						<img alt="logo" src="img/icons/outlook.png">
-						<h2>Outlook</h2>
-						<button data-toggle="collapse" data-target="#outlook">-</button> <!-- check if toggled or not, then changed to + -->
+					<!-- make containers based on the data we pull in - need a backend -->
+					<div id="outlook" class="container">
+						<div class="container-header">
+							<img alt="logo" src="img/icons/outlook.png">
+							<h2>Outlook</h2>
+							<button data-toggle="collapse" data-target="#outlook-container" aria-expanded="false" aria-controls="outlook-container"><span class="min hide">-</span><span class="max show">+</span></button>
+						</div>
+						<div id="outlook-container" class="container-content collapse in">
+							<img alt="outlook" src="img/outlook-inbox.png">
+						</div>
 					</div>
-					<div id="outlook" class="container-content collapse in">
-						<!-- just screenshot the UI -->
-						content
-					</div>
-				</div>
 
-				<div class="container">
-					<div class="container-header">
-						<img alt="logo" src="img/icons/skype.png">
-						<h2>Skype</h2>
-						<button data-toggle="collapse" data-target="#skype">-</button>
+					<div id="skype" class="container">
+						<div class="container-header">
+							<img alt="logo" src="img/icons/skype.png">
+							<h2>Skype</h2>
+							<button data-toggle="collapse" data-target="#skype-container" aria-expanded="false" aria-controls="skype-container"><span class="min hide">-</span><span class="max show">+</span></button>
+						</div>
+						<div id="skype-container" class="container-content collapse in">
+							<img alt="skype" src="img/skype.png">
+						</div>
 					</div>
-					<div id="skype" class="container-content collapse in">
-						content
-					</div>
-				</div>
 
-				<div class="container">
-					<div class="container-header">
-						<img alt="logo" src="img/icons/workplace.png">
-						<h2>Workplace</h2>
-						<button data-toggle="collapse" data-target="#workplace">-</button>
+					<div id="workplace" class="container">
+						<div class="container-header">
+							<img alt="logo" src="img/icons/workplace.png">
+							<h2>Workplace</h2>
+							<button data-toggle="collapse" data-target="#workplace-container" aria-expanded="false" aria-controls="workplace-container"><span class="min hide">-</span><span class="max show">+</span></button>
+						</div>
+						<div id="workplace-container" class="container-content collapse in">
+							content
+						</div>
 					</div>
-					<div id="workplace" class="container-content collapse in">
-						content
-					</div>
-				</div>
 
-				<div class="container">
-					<div class="container-header">
-						<img alt="logo" src="img/icons/bookmark.png"> <!-- why is this bigger -->
-						<h2>Bookmarks</h2>
-						<button data-toggle="collapse" data-target="#bookmarks">-</button>
+					<div id="bookmarks" class="container">
+						<div class="container-header">
+							<img alt="logo" src="img/icons/bookmark.png"> 
+							<h2>Bookmarks</h2>
+							<button data-toggle="collapse" data-target="#bookmarks-container" aria-expanded="false" aria-controls="bookmarks-container"><span class="min hide">-</span><span class="max show">+</span></button>
+						</div>
+						<div id="bookmarks-container" class="container-content collapse in">
+							<div class="bookmark-links left">
+								<h4>GSK Internal</h4>
+								<ul>
+									<li><a href="#">Connect GSK</a></li>
+									<li><a href="#">Service Gateway</a></li>
+									<li><a href="#">Outlook</a></li>
+									<li><a href="#">OneDrive</a></li>
+									<li><a href="#">Workplace</a></li>
+								</ul>
+							</div>
+							<div class="bookmark-links">
+								<h4>Human Resources</h4>
+								<ul>
+									<li><a href="#">Fieldglass</a></li>
+									<li><a href="#">Atrium</a></li>
+								</ul>
+							</div>
+							<div class="bookmark-links right">
+								<h4>Personal</h4>
+								<ul>
+									<li><a href="#">JIRA</a></li>
+									<li><a href="#">Confluence</a></li>
+									<li><a href="#">Github</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-					<div id="bookmarks" class="container-content collapse in">
-						content
-					</div>
-				</div>
 
-				<div class="container">
-					<div class="container-header">
-						<img alt="logo" src="img/icons/news.png">
-						<h2>News</h2>
-						<button data-toggle="collapse" data-target="#news">-</button>
-					</div>
-					<div id="news" class="container-content collapse in">
-						content
+					<div id="news" class="container">
+						<div class="container-header">
+							<img alt="logo" src="img/icons/news.png">
+							<h2>News</h2>
+							<button data-toggle="collapse" data-target="#news-container" aria-expanded="false" aria-controls="news-container"><span class="min hide">-</span><span class="max show">+</span></button>
+						</div>
+						<div id="news-container" class="container-content collapse in">
+							<img alt="news" src="img/news.png">
+						</div>
 					</div>
 				</div>
 			</div>
