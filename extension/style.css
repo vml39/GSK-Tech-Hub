@@ -17,11 +17,13 @@ body {
 
 header {
 	background-color: var(--gskteal);
+	padding-top: 5px;
+	padding-bottom: 3px;
 }
 
 header img {
 	width: 10%;
-	align: middle;
+	float: left;
 }
 
 h1 {
@@ -29,7 +31,7 @@ h1 {
 	color: #ffffff;
 	margin: 0;
 	padding: 5px;
-	display: inline-block;
+	text-align: center;
 	font-weight: normal;
 }
 

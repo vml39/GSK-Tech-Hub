@@ -62,7 +62,7 @@ document.getElementById("news-show").addEventListener("click", function() {toggl
 
 function toggleApp(app) {
 	if (document.getElementById(app+"-show").checked) {
-		// $(this).parent().find(".collapse").collapse();
+		// $(this).parent().find(".collapse").collapse("hide"); //TODO: not working
 		document.getElementById(app).style.display = "block";
 	}
 	else {
