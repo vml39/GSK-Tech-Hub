@@ -22,7 +22,7 @@ To run the app:
 Note: Follow GSK's style guide on Marketplace after its launch.
 
 ### Extension
-* Integrate external apps - [Chrome Identity API](http://developer.chrome.com/apps/identity.html)
+* Integrate external apps - [Chrome Identity API](http://developer.chrome.com/apps/identity.html) - use the launchWebAuthFlow method to authorize apps
 * Implement notifications
 
 ### Web App
