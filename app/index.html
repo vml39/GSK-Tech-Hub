@@ -151,7 +151,7 @@
 							<button data-toggle="collapse" data-target="#workplace-container" aria-expanded="false" aria-controls="workplace-container"><span class="min hide">-</span><span class="max show">+</span></button>
 						</div>
 						<div id="workplace-container" class="container-content collapse in">
-							content
+							<img alt="skype" src="img/workplace.png">
 						</div>
 					</div>
 
@@ -162,30 +162,31 @@
 							<button data-toggle="collapse" data-target="#bookmarks-container" aria-expanded="false" aria-controls="bookmarks-container"><span class="min hide">-</span><span class="max show">+</span></button>
 						</div>
 						<div id="bookmarks-container" class="container-content collapse in">
+							<button id="editBookmarks" class="show">edit</button><button id="doneEditingBookmarks" class="hide">done</button>
 							<div class="row">
 								<div class="bookmark-links col">
 									<h4>GSK Internal</h4>
 									<ul>
-										<li><a href="#">Connect GSK</a></li>
-										<li><a href="#">Service Gateway</a></li>
-										<li><a href="#">Outlook</a></li>
-										<li><a href="#">OneDrive</a></li>
-										<li><a href="#">Workplace</a></li>
+										<li><a href="#">Connect GSK</a><button class="deleteBookmark hide">x</button></li>
+										<li><a href="#">Service Gateway</a><button class="deleteBookmark hide">x</button></li>
+										<li><a href="#">Outlook</a><button class="deleteBookmark hide">x</button></li>
+										<li><a href="#">OneDrive</a><button class="deleteBookmark hide">x</button></li>
+										<li><a href="#">Workplace</a><button class="deleteBookmark hide">x</button></li>
 									</ul>
 								</div>
 								<div class="bookmark-links col">
 									<h4>Human Resources</h4>
 									<ul>
-										<li><a href="#">Fieldglass</a></li>
-										<li><a href="#">Atrium</a></li>
+										<li><a href="#">Fieldglass</a><button class="deleteBookmark hide">x</button></li>
+										<li><a href="#">Atrium</a><button class="deleteBookmark hide">x</button></li>
 									</ul>
 								</div>
 								<div class="bookmark-links col">
 									<h4>Personal</h4>
 									<ul>
-										<li><a href="#">JIRA</a></li>
-										<li><a href="#">Confluence</a></li>
-										<li><a href="#">Github</a></li>
+										<li><a href="#">JIRA</a><button class="deleteBookmark hide">x</button></li>
+										<li><a href="#">Confluence</a><button class="deleteBookmark hide">x</button></li>
+										<li><a href="#">Github</a><button class="deleteBookmark hide">x</button></li>
 									</ul>
 								</div>
 							</div>

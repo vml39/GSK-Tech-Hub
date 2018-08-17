@@ -84,4 +84,22 @@ $('.collapse')
 .on('hidden.bs.collapse', function() {
 	$(this).parent().find(".min").removeClass("show").addClass("hide");
 	$(this).parent().find(".max").removeClass("hide").addClass("show");
-})
+});
+
+/**
+*
+* EDIT BOOKMARKS 
+*
+*/
+
+document.getElementById("editBookmarks").addEventListener("click", function() {
+	$(".deleteBookmark").removeClass("hide").addClass("show");
+	$("#editBookmarks").removeClass("show").addClass("hide");
+	$("#doneEditingBookmarks").removeClass("hide").addClass("show");
+});
+
+document.getElementById("doneEditingBookmarks").addEventListener("click", function() {
+	$(".deleteBookmark").removeClass("show").addClass("hide");
+	$("#editBookmarks").removeClass("hide").addClass("show");
+	$("#doneEditingBookmarks").removeClass("show").addClass("hide");
+});

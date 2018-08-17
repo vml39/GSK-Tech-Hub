@@ -222,7 +222,6 @@ header h1 {
 	width: 40%;
 	padding-bottom: 5px;
 	margin: 0 30% 10px 30%;
-	/*border: 1px solid var(--gskgray);*/
 }
 
 #search {
@@ -275,6 +274,13 @@ header h1 {
 #bookmarks {
 	padding-left: 10px;
 	padding-right: 10px;
+}
+
+#bookmarks-container button {
+	font-size: 10pt !important;
+	width: 50px;
+	position: absolute;
+	right: 7%;
 }
 
 #bookmarks .row {
